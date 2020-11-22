@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing Chatmessages
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+//jshint esversion:8
 module.exports = {
 
     render: (request, response) => {

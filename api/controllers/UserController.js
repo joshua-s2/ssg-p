@@ -5,12 +5,14 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 //jshint esversion:8
-
 module.exports = {
-    tableName: 'user',
+
     render: async(request, response) => {
+        ID = request.session.userId;
         try {
-            let data = await User.findOne({ email: request.body.email });
+            let data = await User.findOne({
+                id: ID,
+            });
             if (!data) {
                 return response.notFound('The user was NOT found!');
             }

@@ -9,7 +9,6 @@ module.exports = {
 
     authenticate: async(request, response) => {
         const email = request.body.email;
-
         if (request.body.action == 'signup') {
             const name = request.body.name;
             // Validate signup form
