@@ -1,0 +1,38 @@
+<form method="post" action="/auth/authenticate" class="ui form">
+    <div class="field">
+        <label>Full Names</label>
+        <input type="text" name="name" placeholder="Full Names" value="<%= typeof name != 'undefined' ? name : '' %>">
+    </div>
+    <div class="required field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>">
+    </div>
+    <div class="required field">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Username" value="<%= typeof username != 'undefined' ? username : '' %>">
+    </div>
+    <div class="field">
+        <label>Bio</label>
+        <input type="text" name="bio" placeholder="Your Bio" value="<%= typeof bio != 'undefined' ? bio : '' %>">
+    </div>
+    <div class="field">
+        <label>Location</label>
+        <input type="text" name="country" placeholder="Your Location" value="<%= typeof location != 'undefined' ? location : '' %>">
+    </div>
+    <div class="required field">
+        <input type="file" name="avatar" value="<%= typeof avatar != 'undefined' ? avatar : '' %>">
+    </div>
+    <button class="ui teal button" type="submit" name="action" value="signup">Sign Up &amp; Login</button>
+    <button class="ui blue button" type="submit" name="action" value="login">Login</button>
+    <p class="note">*Provide email only for Login</p>
+</form>
+<% if(typeof error != 'undefined') { %>
+    <div class="ui error message">
+        <div class="header">
+            <%= error.title %>
+        </div>
+        <p>
+            <%= error.message %>
+        </p>
+    </div>
+    <% } %>
